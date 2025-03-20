@@ -4,12 +4,35 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  let [counter, setCounter] = useState(15)        // isko hook bhi bolte hai ye usestate 2 cheez return karta hai 0th aur 1st index of array pe 0th index pe counter dega aur 1st index pe setCounter function dega naam kuch bhi ho sakta hai in indexes ka
+//jaha jaha counter likha hoga wo update ho jayegaa
+//is se uI aur browser ke dom me sink bathaya gaya hai
 
+  const addValue = () =>{
+    // console.log("Cliked",Math.random());
+    // console.log("Cliked",counter);             //counter ki value jo screen pe likhi hai wo tho update nahi ho rahi hai par counter update ho raha hai console me screen ki value ko update karne ke liye we use usestate to change Ui because Ui react ke hath me hai
+    // counter =counter+1;                     //is se kaam nahi chalega set counterfunction ko call krna hoga
+    setCounter(counter+1)
+  }
+   
+
+  const removeValue = () =>{
+    setCounter(counter-1)
+  }
+
+  // let counter = 5      //yaha pe hu jo value dalenge wo run toh ho hi rahi hai kya zarurat hai hooks ki
   return (
     <>
-      <h1>Chai aur React</h1>
-      <h2>Counter Value:5</h2>
+        <h1>Chai aur React</h1>
+        <h2>Counter Value {counter}</h2>
+        <button 
+              onClick={addValue}
+        >Add Value</button>
+        <br/>
+        <button
+          onClick={removeValue}
+        >Remove Value</button>
+
       
   
     </>
