@@ -65,12 +65,27 @@ import Chai from "./chai"
 
 
 
-function App() {
+// function App() {
   
+//   return (
+//     <>
+//       <Chai/>                   
+//       <h1>chai aur react</h1>
+//     </>
+//    //fragment bana diya
+//   )
+// }
+
+// export default App
+
+
+
+function App() {
+  const username="Ashish"
   return (
     <>
       <Chai/>                   
-      <h1>chai aur react</h1>
+      <h1>chai aur react {username}</h1>
     </>
    //fragment bana diya
   )
