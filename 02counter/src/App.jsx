@@ -16,7 +16,19 @@ function App() {
     // if(counter<20)
     // {
     //   setCounter(counter+1)               //this is wrong because counter wahi pe stop ho jayega  usko 15 pe set karna hoga
+    //    setCounter(counter+1
+          // setCounter(counter+1)
+          // setCounter(counter+1)
     // }
+    //agar hum setCounter(counter+1) ko 4 baar likhe ge toh bhi output 15 ke baad 16 hi hoga because 4 charo ek batch me jayenge aur 16  hi output hoga
+    
+    //set counter ek callbacck accept karta hai like setCounter(() =>{}) curly braces ka use karenge toh return statement ka use karna hoga
+    //setCounter((prevcounter)=>{return prevcounter+1}) retutn statement ka use kar ke
+    // setCounter((prevcounter)=>prevcounter+1)
+    // setCounter((prevcounter)=>prevcounter+1)
+    // setCounter((prevcounter)=>prevcounter+1)
+    // setCounter((prevcounter)=>prevcounter+1)
+    // //prevCounter se hum ne previous state pass kiya hai isliye yah sidhe 4 plus ho jayega counter value me
     setCounter(previousCounter => (previousCounter >= 20 ?15:previousCounter+1))
 
 
