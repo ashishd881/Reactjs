@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
@@ -30,8 +28,6 @@ function App() {
     // setCounter((prevcounter)=>prevcounter+1)
     // //prevCounter se hum ne previous state pass kiya hai isliye yah sidhe 4 plus ho jayega counter value me
     setCounter(previousCounter => (previousCounter >= 20 ?15:previousCounter+1))
-
-
   }
   const removeValue = () =>{
     
@@ -41,10 +37,6 @@ function App() {
     // }
 
     setCounter(previousCounter => (previousCounter <= 0 ?15:previousCounter-1))
-
-
-
-
   }
 
   // let counter = 5      //yaha pe hu jo value dalenge wo run toh ho hi rahi hai kya zarurat hai hooks ki

@@ -21,13 +21,14 @@ function App() {
     }
     for (let i = 0; i < length; i++) {
       let char = Math.floor(Math.random()*str.length+1)
+      // console.log(char)
       pass += str.charAt(char)
     }
     setPassword(pass)
 
     },[length, numberAllowed, charAllowed, setPassword])    //yaha pe agar password diya toh infinite loop me hum fas jayenge       aur in cheezo me se kuch bhi change ho aur passwordGenerator run ho toh usko hum optimise karte hai
   
-//hum chate hai ki jab bhi hamara page load ho ek password hamesha generate rahe toh ike liye hum passwordGenerator ko call kar ke chod dete hai but 
+//hum chate hai ki jab bhi hamara page load ho ek password hamesha generate rahe toh uske liye hum passwordGenerator ko call kar ke chod dete hai but 
 //se cant do this because react me hum kab kon si cheez render hogi hum nahi control karenge use liye hum useeffect hook ka use karenge  ya phir ek button laga ake call karle
   
 
@@ -45,46 +46,47 @@ const copyPasswordToClipboard = useCallback(() =>{
 
 
 //useRef hook ka use hum reference ko copy karne ke liye karte hai
-const passwordRef =useRef(null)    //default value null d edi hai
+const passwordRef =useRef(null)    //default value null de di hai
 return (
-    <>
+  <>
       
-      <div className='w-full max-w-md mx-auto shadow-md rounded-lg
-         px-6 my-6 text-orange-500 bg-gray-600 '>
-            <h1 className='text-3xl text-center text-white my-3' >Password Generator
-            </h1>
+    <div className='w-full max-w-md mx-auto shadow-md rounded-lg
+        px-6 my-6 text-orange-500 bg-gray-600 '>
+          <h1 className='text-3xl text-center text-white my-3' >Password Generator
+          </h1>
           <div className='flex shadow rounded-lg overflow-hidden mb-4 bg-white '>
-            <input type="text" value={password}
+              <input type="text" value={password}
                   className='outline-none w-full py-1 px-3 '
                   placeholder='password'
                   readOnly
                   ref={passwordRef}            //passaword ko copy karne ke liye ye banaya  gaya hai
-            ></input>
-            <button 
-            //password copy karne ke liye clipboard ka use hua hai
-            onClick={copyPasswordToClipboard}
-            className='outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0 cursor-pointer'
-                >Copy
-
-            </button>
+              ></input>
+              <button 
+                  //password copy karne ke liye clipboard ka use hua hai
+                  onClick={copyPasswordToClipboard}
+                  className='outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0 cursor-pointer'
+                      >Copy
+              </button>
           </div>
-        <div className='flex text-sm gap-x-2'>
-          <div className='flex text-sm gap-x-1'>
-            <input type="range" min={6} max={100} value={length} 
+          <div className='flex text-sm gap-x-2'>
+            <div className='flex text-sm gap-x-1'>
+              <input type="range" min={6} max={100} value={length} 
                 className='cursor-pointer'
                 onChange={(e) => {setLength(e.target.value)}}
                 ></input>
-                <label>Length :{length}</label>
-          </div>
-          <div className='flex items-center gap-x-1'>
-            <input type="checkbox" defaultChecked={numberAllowed}
-             id='numberInput' onChange={() => {
+                <label>Length :{length}
+                </label>
+            </div>
+            <div className='flex items-center gap-x-1'>
+              <input type="checkbox" defaultChecked={numberAllowed}
+                id='numberInput' onChange={() => {
                 setNumberAllowed((prev) => !prev);     //true aur false flip hota rahega
-              }}>
-            </input>
-            <label htmlFor='numberInput'>Numbers</label>
-          </div>
-          <div className='flex items-center gap-x-1'>
+               }}>
+              </input>
+              <label htmlFor='numberInput'>Numbers
+              </label>
+            </div>
+            <div className='flex items-center gap-x-1'>
                   <input type="checkbox" defaultChecked={charAllowed}
                           id="characterInput" onChange={() =>{
                             setCharAllowed(prev => !prev);
@@ -92,12 +94,10 @@ return (
                         >
                   </input>
                   <label htmlFor='characterInput'>Characters</label>
+            </div>
           </div>
-        </div>
-
-      </div>
-    </>
-  )
-}
+    </div>
+  </>
+)}
 
 export default App

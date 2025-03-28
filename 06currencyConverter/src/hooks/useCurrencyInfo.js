@@ -1,8 +1,8 @@
 // function hello(){
-//     return []                  //this is s acustom hook returning array
+//     return []                  //this is s a custom hook returning array custum hooks can use built in arrays
 // }
 
-import { useEffect,useState } from "react";
+import {useEffect ,useState} from "react";
 
 //Ab hum custom hooks banayenge by default we start naming with use but it is not necessary
 function useCurrecncyInfo(currency){   

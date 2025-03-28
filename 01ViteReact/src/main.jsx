@@ -10,7 +10,7 @@ import App from './App.jsx'
   
 // )
 
-//App ek function hai toh usko hum yaha bhi bana sakte hai
+// App ek function hai toh usko hum yaha bhi bana sakte hai
 // function MyApp(){
 //   return (
 //       <div>
@@ -54,12 +54,12 @@ import App from './App.jsx'
 
 // doing above thing by another method
 
-// const anotherElement =(
-//   <a href="https://www.google.com/" target='_blank'>Visit Google</a>
-// )
+const anotherElement =(
+  <a href="https://www.google.com/" target='_blank'>Visit Google</a>
+)
 
 
-// createRoot(document.getElementById('root')).render(anotherElement)     //visit google show ho jayega
+createRoot(document.getElementById('root')).render(anotherElement)     //visit google show ho jayega
 
 
 //ab hum react ke hisab se reactElement banayenge taki syntax error nahi aaye jo ki uapr aayi thi

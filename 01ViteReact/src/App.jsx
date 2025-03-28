@@ -1,13 +1,13 @@
 
-// function App() {
+function App() {
   
 
-//   return (
-//    <h1>Chai aur React with vite || Ashish</h1>
-//   )
-// }
+  return (
+   <h1>Chai aur React with vite || Ashish</h1>
+  )
+}
 
-// export default App
+export default App
 
 
 
@@ -36,7 +36,7 @@
 
 
 
-import Chai from "./chai"         
+// import Chai from "./chai"         
 // function App() {
   
 //   return (
@@ -80,15 +80,15 @@ import Chai from "./chai"
 
 
 
-function App() {
-  const username="Ashish"
-  return (
-    <>
-      <Chai/>                   
-      <h1>chai aur react {username}</h1>
-    </>
-   //fragment bana diya
-  )
-}
+// function App() {
+//   const username="Ashish"
+//   return (
+//     <>
+//       <Chai/>                   
+//       <h1>chai aur react {username}</h1>
+//     </>
+//    //fragment bana diya
+//   )
+// }
 
-export default App
+// export default App

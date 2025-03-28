@@ -10,12 +10,12 @@
 // export default chai            //chai ko capital letter me likhna hoga
 
 
-function Chai()
-{
-    return(
-        <h3>chai is ready</h3>
-    )
-}
-export default Chai
+// function Chai()
+// {
+//     return(
+//         <h3>chai is ready</h3>
+//     )
+// }
+// export default Chai
 
 //react me kul mila ke script inject karni hai index.html file me hai aur script methods se run hoti hai jo ki react aur react-dom me hai  package.json file me dekho
