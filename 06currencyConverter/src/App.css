@@ -1,1 +1,13 @@
 @import "tailwindcss";
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: auto;
+  appearance: auto;
+}
+
+input[type="number"] {
+  appearance: auto;
+}
+
+
+/* ye pura up aur down arrow se number increase aur decrease karne ke liye likha gaya hai  */
