@@ -55,7 +55,7 @@ const router = createBrowserRouter(
 
     </Route>
   )
-  //jo kaam hum ne github wali file pe kiya fo'lowers pane ke liye wo kaam hum yahaa loader me kar skate hai
+  //jo kaam hum ne github wali file pe kiya followers pane ke liye wo kaam hum yahaa loader me kar skate hai
   // hum router ke andar router ko bhi call kar sakte hai 
 )
 

@@ -10,13 +10,13 @@ import Header from './components/Header/Header'
 function App() {
   const [count, setCount] = useState(0)
   //ab hum tino component render kara lenge aur index file baana ke bhi kar skate hai par hum render app.jsx me nahi karenge kyunki hum ne npm i react-router ka use kar liya hai 
-  return (
-    <>
-      <Header/>
-      <Home/>
-      <Footer/>
-    </>
-  )
+//   return (
+//     <>
+//       <Header/>
+//       <Home/>
+//       <Footer/>
+//     </>
+//   )
 }
 
 export default App
