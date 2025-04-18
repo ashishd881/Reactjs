@@ -27,6 +27,7 @@ export default function Footer() {
                                     <Link to="/about" className="hover:underline">
                                         About
                                     </Link>
+                                    {/* <Link> component from React Router */}
                                 </li>
                             </ul>
                         </div>

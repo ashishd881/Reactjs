@@ -35,7 +35,7 @@ function App() {
                   <form
                       onSubmit={(e) => {
                           e.preventDefault();
-                          convert()
+                        //   convert()
                          
                       }}
                   >
@@ -72,7 +72,7 @@ function App() {
                               amountDisable
                           />
                       </div>
-                      <button type="submit" className="w-full bg-blue-600 text-white px-4 py-3 rounded-lg">
+                      <button onClick={convert} type="submit" className="w-full bg-blue-600 text-white px-4 py-3 rounded-lg">
                           Convert {from.toUpperCase()} to {to.toUpperCase()}
                       </button>
                   </form>

@@ -1,6 +1,5 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
 //ye niche ke import apne app aa gaye hai jaise hi  retutn ke andar likha 
 import Footer from './components/Footer/Footer'
