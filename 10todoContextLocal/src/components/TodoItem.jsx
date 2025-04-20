@@ -3,16 +3,16 @@ import { useTodo } from '../contexts';
 
 function TodoItem({ todo }) {
     const [isTodoEditable,setIsTodoEditable] = useState(false)
-    const [todoMsg, setTodoMsg] = useState(todo)
-    const {updateTodo, deleteTodo,toggleComplete} =useTodo() 
+    const [todoMsg, setTodoMsg] = useState(todo.todo)
+    const {updatedTodo, deleteTodo, toggleComplete} =useTodo() 
 
     const editTodo =() =>{
-        updateTodo(todo.id,{...todo,todo:todoMsg})
+        updatedTodo(todo.id,{...todo,todo:todoMsg})     //object pass kiya so spread kar liya aur todo me todomsg dal diya 
         setIsTodoEditable(false)
     }
 
     const toggleCompleted=() => {
-        toggleComplete(todo.id)
+        toggleComplete(todo.id)  //app.jsx me bana hai ye
     }
 
     return (

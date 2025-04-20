@@ -3,15 +3,15 @@ import { useTodo } from '../contexts'
 
 function TodoForm() {
     const [todo,setTodo] = useState("")
-    const {addTodo} = useTodo()
+    const {addTodo} = useTodo()   //is se todo add hoga useTodo se addTodo le liya
 
     const add = (e) => {
         e.preventDefault()
 
         if(!todo) return 
         // addTodo({id: Date.now(), todo:todo,completed:false})
-        addTodo({ todo,completed:false})
-        setTodo("")
+        addTodo({ todo,completed:false})  //object pass karnge because spread karna hai
+        setTodo(" ")
     }
 
     return (

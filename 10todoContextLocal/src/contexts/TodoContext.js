@@ -1,6 +1,7 @@
 import { createContext,useContext } from "react";
 
-export const TodoContext = createContext({
+export const TodoContext = createContext({ 
+    // ek array bana liya har ke todo ek object hai
     todos: [
         {
             id:1,
@@ -8,10 +9,10 @@ export const TodoContext = createContext({
             completed : false,
         }
     ],
-    addTodo: (todo) => {},
+    addTodo: (todo) => {},         //yaha function sirf define kar rahe ahi inki functionality hum app. jsx me likhenge when we use redux we will write the functionality
     updatedTodo: (id,todo)=>{},
     deleteTodo:(id)=>{},
-    toggleComplete:(id)=>{}
+    toggleComplete:(id)=>{}    
 
     
 })
@@ -21,4 +22,4 @@ export const useTodo =() => {
     return useContext(TodoContext)
 }
 
-export const TodoProvider =TodoContext.Provider
+export const TodoProvider =TodoContext.Provider   //TodoContext.provider na likhna pade so we use  this line
