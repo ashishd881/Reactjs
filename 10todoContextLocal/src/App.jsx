@@ -11,7 +11,7 @@ function App() {
   }
 
   const updatedTodo =(id,todo) => {
-    setTodos((prev) => prev.map((prevTodo) => (prevTodo.id===id) ? todo :prevTodo ))  //har ke todo pe gaye aur argument me di gayi id se compare kiya 
+    setTodos((prev) => prev.map((prevTodo) => (prevTodo.id===id) ? todo:prevTodo ))  //har ke todo pe gaye aur argument me di gayi id se compare kiya 
 
     // prev.map((eachVal) =>{
     //   if(eachVal.id === id)
@@ -42,7 +42,7 @@ function App() {
   //dependency me todos dal diya because jaise hi todos banayenge toh wo localStorage me chala jayega
 
   return (
-    <TodoProvider value={{todos,addTodo,updatedTodo,deleteTodo,toggleComplete}}>
+     <TodoProvider value={{todos,addTodo,updatedTodo,deleteTodo,toggleComplete}}>
     <>
       <div className="bg-[#172842] min-h-screen py-8 w-full">
                 <div className="w-full max-w-2xl mx-auto shadow-md rounded-lg px-4 py-3 text-white">
