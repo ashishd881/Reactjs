@@ -12,13 +12,9 @@ export const TodoContext = createContext({
     addTodo: (todo) => {},         //yaha function sirf define kar rahe ahi inki functionality hum app. jsx me likhenge when we use redux we will write the functionality
     updatedTodo: (id,todo)=>{},
     deleteTodo:(id)=>{},
-    toggleComplete:(id)=>{}    
-
-    
+    toggleComplete:(id)=>{}       
 })
-
-
-export const useTodo =() => {
+export const useTodo =() => {       //usetodo ke pass jo tudo context banaya hai uska puta data hai
     return useContext(TodoContext)
 }
 

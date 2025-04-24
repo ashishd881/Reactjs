@@ -3,5 +3,5 @@ import {configureStore} from "@reduxjs/toolkit"     //core redux se aaya hai ye 
 import todoReducer from '../features/todo/todoSlice'
 
 export const store = configureStore({
-    reducer: todoReducer
+    reducer: todoReducer                 //this is keyvalue and property we may have multiple of them
 })
