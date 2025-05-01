@@ -4,7 +4,6 @@ import {Button, Input, Select, RTE} from '../index'
 import appwriteService from "../../appwrite/config"    //export deafaukt kiya hai toh naam change kar sakte hai
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { useEffect } from 'react'
 function PostForm({post}) {
     const {register, handleSubmit , watch , setValue} = useForm({   //kisi field ko continously monitor karna hai set karna hai  control karna hai aur values cahiyea toh useForm ka use karnege
         defaultValues:{
