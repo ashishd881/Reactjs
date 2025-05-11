@@ -2,7 +2,7 @@ import Header from "./Header/Header";  // default export hai ye so we are not us
 import Footer from "./Footer/footer";
 import Container from "./container/Container"
 import Logo from "./Logo"
-import LogoutBtn from "./LogoutBtn";
+import LogoutBtn from "./Header/LogoutBtn";
 import RTE from "./RTE";
 import Signup from "../pages/Signup";
 import Login from "../pages/Login";
@@ -26,5 +26,5 @@ export { //yaha pe export default nahi hai so we  use {} ja bhi import karna hai
     AuthLayout,
     Button,
     Select,
-    Input
+    Input,
 }

@@ -4,8 +4,9 @@ import {Button, Input, Select, RTE} from '../index'
 import appwriteService from "../../appwrite/config"    //export deafaukt kiya hai toh naam change kar sakte hai
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+
 function PostForm({post}) {
-    const {register, handleSubmit , watch , setValue} = useForm({   //kisi field ko continously monitor karna hai set karna hai  control karna hai aur values cahiyea toh useForm ka use karnege
+    const {register, handleSubmit , watch , setValue, control ,getValues} = useForm({   //kisi field ko continously monitor karna hai set karna hai  control karna hai aur values cahiyea toh useForm ka use karnege
         defaultValues:{
             title: post?.title || '',   //agar post hai toh uska title usekar lo nahi toh empty rakh do
             slug: post?.slug || '',
@@ -19,20 +20,19 @@ function PostForm({post}) {
     //agar post hai oth update karo nahi toh ek nayi entry create karo
     const submit = async(data) => {
         if(post){
-            const file = data.image[0] ? appwriteService.UploadFile(data.image[0]) : null  //pheli imeage le li
+            const file = data.image[0] ? await appwriteService.UploadFile(data.image[0]) : null  //pheli imeage le li
             
             if(file){
                 appwriteService.deleteFile(post.featuredImage)
             }
             const dbPost = await appwriteService.updatePost(post.$id,{
                 ...data,
-                featuredImage: file ? file.$id : undefined,
+                featuredImage: file ? file.$id : undefined,})
                 
+            if(dbPost){
+                navigate(`/post/${dbPost.$id}`)
+            }
             
-                if(dbPost){
-                    navigate(`/post/${dbPost.$id}`)
-                }
-            })
         
         }
         else
@@ -65,19 +65,20 @@ function PostForm({post}) {
                         .replace(/\s/g,'-')            //globaly saaare spaces ko dekha aur - se replace kar diya
         }
         return ''   //return kar diya empty string ko
-        
-        useEffect(()=>{
-            const subscription =  watch((value,{name})=>{  //subscription banya watch method se watch reacthook form se mila hai 
-                if(name === 'title'){
-                    setValue('slug', slugTransform(value.title,{shouldValidate: true}))  //value is object here
-                }
-            })
-                return() =>{
-                subscription.unsubscribe()         //return ke andar useEffect me callback milta hai aue is se hum optimization kiya hai
-            }
-        },[watch,slugTransform,setValue])
 
-    },[])     
+    },[])   
+
+    useEffect(()=>{
+        const subscription =  watch((value,{name})=>{  //subscription banya watch method se watch reacthook form se mila hai 
+            if(name === 'title'){
+                setValue('slug', slugTransform(value.title,{shouldValidate: true}))  //value is object here
+            }
+        })
+            return() =>{
+            subscription.unsubscribe()         //return ke andar useEffect me callback milta hai aue is se hum optimization kiya hai
+        }
+    },[watch,slugTransform,setValue])  
+
     return (
         <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
             <div className="w-2/3 px-2">

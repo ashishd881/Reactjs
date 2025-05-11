@@ -14,7 +14,7 @@ export class Service{
         this.bucket = new Storage(this.client)
     }
 
-    async createPost({title, slug, content, featuredImage, status, usedId}){
+    async createPost({title, slug, content, featuredImage, status, userId}){
         try {
             return await this.databases.createDocument(
                 conf.appwriteDatabaseId,
@@ -25,7 +25,7 @@ export class Service{
                     content,
                     featuredImage,
                     status,
-                    usedId
+                    userId
                 }
             )
         } catch (error) {   //ye error appwriteservice ke create post aa rahi hia
@@ -33,7 +33,7 @@ export class Service{
         }
     }
 
-    async updatePost(slug,{title,content,featuredImage,status,userId}){   //slug ko hata diya taki uniqueId mil jaye slug se
+    async updatePost(slug,{title,content,featuredImage,status}){   //slug ko hata diya taki uniqueId mil jaye slug se
         try{
              return await this.databases.updateDocument(
                 conf.appwriteDatabaseId,
@@ -43,7 +43,7 @@ export class Service{
                     title,
                     content,
                     featuredImage,
-                    status
+                    status,
                 }
              )
         }catch(error){
@@ -77,7 +77,7 @@ export class Service{
         }
     }
 
-    async  getposts(queries = [Query.equal("status",active)]){
+    async  getposts(queries = [Query.equal("status","active")]){
         try{
             return await this.databases.listDocuments(
                 conf.appwriteDatabaseId,
