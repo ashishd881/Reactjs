@@ -54,7 +54,7 @@ function Header() {
                                                         className='inline-block px-6 py-2 duration-200 hover:bg-blue-100 rounded-full'>
                                                         {item.name}
                                                       </button>
-                                                      {/* buttomn me click karte hi navoigate ho jayega */}
+                                                      {/* buttomn me click karte hi navigate ho jayega */}
                                                     </li>): null)
               }
               {/* react start kar ke authstatus batao agar authStatus true hoga toh uske aage ka dikhega anhi toh nahi diekhega*/}

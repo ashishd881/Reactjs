@@ -1,4 +1,4 @@
-import Reactm,{useId} from 'react'
+import React,{useId} from 'react'
 
 const Input = React.forwardRef(function Input({    //pure code ko forwardRef hook me wrap kar diya
     label,
